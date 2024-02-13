@@ -1,7 +1,38 @@
-query Event {
+query Event($where: EventWhereUniqueInput!) {
+  event(where: $where) {
+    author {
+      email
+      name
+    }
+    createdAt
+    description {
+      document
+    }
+    id
+    imageList {
+      img {
+        url
+      }
+      name
+    }
+    latitude
+    longitude
+    status
+    tags {
+      name
+    }
+    title
+    titleImage {
+      url
+    }
+  }
+}
+
+query Events {
   events {
     latitude
     longitude
     title
+    createdAt
   }
 }

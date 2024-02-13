@@ -17,7 +17,7 @@ const config: CodegenConfig = {
     preResolveTypes: true,
   },
   generates: {
-    "src/types.ts": { plugins: ["typescript"] },
+    "src/shared/api/models.gen.ts": { plugins: ["add", "typescript"] },
     "src/": {
       preset: "near-operation-file",
       presetConfig: {

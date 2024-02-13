@@ -1,3 +1,9 @@
+/**
+ *
+ * @param key strinп
+ * @returns ключ из env или '', может выдать ошибку
+ */
+
 const getEnvVar = (key: string) => {
   if (process.env[key] === undefined) {
     throw new Error(`Env variable ${key} is required`);
