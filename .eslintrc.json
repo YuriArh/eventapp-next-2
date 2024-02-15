@@ -26,11 +26,11 @@
       {
         "pathGroups": [
           { "pattern": "react", "group": "builtin" },
-          { "pattern": "~shared/**", "group": "internal" },
-          { "pattern": "~entities/**", "group": "internal" },
-          { "pattern": "~features/**", "group": "internal" },
-          { "pattern": "~widgets/**", "group": "internal" },
-          { "pattern": "~pages/**", "group": "internal" }
+          { "pattern": "~/shared/**", "group": "internal" },
+          { "pattern": "~/entities/**", "group": "internal" },
+          { "pattern": "~/features/**", "group": "internal" },
+          { "pattern": "~/widgets/**", "group": "internal" },
+          { "pattern": "~/pages/**", "group": "internal" }
         ],
         "pathGroupsExcludedImportTypes": ["builtin"],
         "groups": [
@@ -51,12 +51,12 @@
         "patterns": [
           {
             "group": [
-              "~shared/*/*/**",
-              "~entities/*/**",
-              "~features/*/**",
-              "~widgets/*/**",
-              "~pages/*/**",
-              "~app/**"
+              "~/shared/*/*/**",
+              "~/entities/*/**",
+              "~/features/*/**",
+              "~/widgets/*/**",
+              "~/pages/*/**",
+              "~/app/**"
             ],
             "message": "Direct access to the internal parts of the module is prohibited"
           },
@@ -73,10 +73,6 @@
           }
         ]
       }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": ["./vite.config.ts"] }
     ]
   },
   "overrides": [
