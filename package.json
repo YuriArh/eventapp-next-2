@@ -16,6 +16,7 @@
     "@apollo/client": "^3.8.10",
     "@next/env": "^14.1.0",
     "@nextui-org/react": "^2.2.9",
+    "@nextui-org/theme": "^2.1.17",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.29.1",
     "framer-motion": "^10.18.0",
@@ -54,6 +55,7 @@
     "graphql-codegen-apollo-next-ssr": "^1.7.4",
     "postcss": "^8",
     "storybook": "^7.6.15",
+    "storybook-dark-mode": "^3.0.3",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.3.3"
   }

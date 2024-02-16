@@ -13,7 +13,7 @@ export function CustomMap() {
     <Map
       {...viewState}
       style={{ width: "100vw", height: "100vh" }}
-      mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${MAP_KEY}`}
+      mapStyle={`https://api.maptiler.com/maps/streets-v2-dark/style.json?key=${MAP_KEY}`}
       onMove={onMove}
       initialViewState={{ zoom: 14 }}
     >
