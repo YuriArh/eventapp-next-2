@@ -1,5 +1,7 @@
+import { gql, useQuery } from "@apollo/client";
 import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { ViewState, ViewStateChangeEvent } from "react-map-gl/maplibre";
+import { useEventsQuery } from "~/entities/Event/api";
 
 export function useMap() {
   const [viewState, setViewState] = useState<{
@@ -31,4 +33,10 @@ export function useMap() {
   }, []);
 
   return { viewState, setViewState, onMove };
+}
+
+export function useMapEvents() {
+  const { data, loading } = useEventsQuery();
+
+  return { events: data?.events, loading };
 }

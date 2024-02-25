@@ -1,3 +1,4 @@
+"use client";
 import {
   ApolloClient,
   InMemoryCache,
@@ -10,6 +11,7 @@ import { API_URL } from "~/shared/config/apiConfig";
 
 const httpLink = createHttpLink({
   uri: API_URL,
+  credentials: "same-origin",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -26,12 +28,12 @@ const authLink = setContext((_, { headers }) => {
 
 /**
  * Инициализация инстанса клиента
- * @see https://www.apollographql.com/docs/react/networking/authentication/
+ * @see https://www.apollographql.com/docs/react/performance/server-side-rendering
  */
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  ssrMode: true,
+  link: httpLink,
   cache: new InMemoryCache(),
-  // connectToDevTools: true,
 });
 
 /**

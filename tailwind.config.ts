@@ -1,3 +1,4 @@
+import { themes } from "@storybook/theming";
 import { nextui } from "@nextui-org/react";
 
 import type { Config } from "tailwindcss";
@@ -18,6 +19,18 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  themes: {
+    light: {
+      colors: {
+        primary: "#7828c8",
+      },
+    },
+    dark: {
+      colors: {
+        primary: "#9353d3",
       },
     },
   },
