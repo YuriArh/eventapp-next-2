@@ -1,14 +1,14 @@
 import { useTheme } from "next-themes";
 
-export function useMode() {
+export function useThemeMode() {
   const { theme, setTheme } = useTheme();
 
-  const toggleMode = () => {
+  const toggleThemeMode = () => {
     if (theme === "light") {
       setTheme("dark");
     } else {
       setTheme("light");
     }
   };
-  return [toggleMode];
+  return [toggleThemeMode];
 }

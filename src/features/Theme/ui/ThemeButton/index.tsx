@@ -2,18 +2,18 @@ import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import React from "react";
 import { CiDark, CiLight } from "react-icons/ci";
-import { useMode } from "../../model";
+import { useThemeMode } from "../../model";
 
 /**
  *
  * @returns {ReactNode} button for toggle theme
  */
 
-export function ModeButton() {
+export function ThemeButton() {
   const { theme } = useTheme();
-  const [toggleMode] = useMode();
+  const [toggleThemeMode] = useThemeMode();
   return (
-    <Button onClick={toggleMode} size="sm" isIconOnly radius="full">
+    <Button onClick={toggleThemeMode} size="sm" isIconOnly radius="full">
       {theme === "light" ? <CiDark size={25} /> : <CiLight size={25} />}
     </Button>
   );
