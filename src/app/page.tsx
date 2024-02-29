@@ -1,15 +1,6 @@
-import { MainTools } from "~/widgets/MainTools";
-import { CustomMap } from "~/widgets/Map";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-      <main>
-        <div className="relative ">
-          <MainTools />
-          <CustomMap />
-        </div>
-      </main>
-    </>
-  );
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect("/ru");
 }

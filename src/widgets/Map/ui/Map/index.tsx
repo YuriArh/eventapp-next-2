@@ -7,10 +7,9 @@ import { MAP_KEY } from "~/shared/config/apiConfig";
 import { useMap, useMapEvents } from "../../model";
 import { EventMarker } from "~/entities/Event";
 import { useTheme } from "next-themes";
-import { useEffect } from "react";
 
 export function CustomMap() {
-  const { viewState, setViewState, onMove } = useMap();
+  const { viewState, onMove } = useMap();
   const { events } = useMapEvents();
   const { theme } = useTheme();
 
