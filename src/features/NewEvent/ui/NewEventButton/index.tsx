@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/react";
+import { useMessages, useTranslations } from "next-intl";
 import React from "react";
 
 /**
@@ -7,9 +8,10 @@ import React from "react";
  */
 
 export function NewEventButton() {
+  const t = useTranslations();
   return (
     <Button color="primary" size="sm">
-      NewEvent
+      {t("LocaleLayout.newEvent")}
     </Button>
   );
 }

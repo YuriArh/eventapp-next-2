@@ -1,6 +1,7 @@
 {
   "LocaleLayout": {
     "title": "ИВЕНТАПП",
-    "description": "ФИГА РАБОТАЕТ"
+    "description": "ФИГА РАБОТАЕТ",
+    "newEvent": "Новый ивент"
   }
 }

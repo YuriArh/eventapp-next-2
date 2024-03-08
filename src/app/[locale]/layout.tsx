@@ -3,9 +3,11 @@ import { Inter } from "next/font/google";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 import { ReactNode } from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "~/shared/config/i18n";
 import { Providers } from "../_providers";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import { pick } from "lodash";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,14 +31,20 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: Props) {
+export default function LocaleLayout({ children, params: { locale } }: Props) {
+  unstable_setRequestLocale(locale);
+  const messages = useMessages();
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <NextIntlClientProvider
+            locale={locale}
+            messages={pick(messages, "LocaleLayout")}
+          >
+            {children}
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );
