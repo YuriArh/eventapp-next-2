@@ -6,14 +6,14 @@ export default createMiddleware({
   locales,
 
   // Used when no locale matches
-  defaultLocale: "ru",
+  defaultLocale: "en",
 });
 
 export const config = {
   // Match only internationalized pathnames
   matcher: [
     "/",
-    "/(ru|en)/:path*",
+    "/(en|ru)/:path*",
     // Enable redirects that add missing locales
     // (e.g. `/pathnames` -> `/en/pathnames`)
     "/((?!_next|_vercel|.*\\..*).*)",
