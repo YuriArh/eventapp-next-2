@@ -1,5 +1,7 @@
+"use client";
 import { Button } from "@nextui-org/react";
 import { useMessages, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 /**
@@ -9,8 +11,13 @@ import React from "react";
 
 export function NewEventButton() {
   const t = useTranslations();
+  const router = useRouter();
   return (
-    <Button color="primary" size="sm">
+    <Button
+      color="primary"
+      size="sm"
+      onClick={() => router.push("?modal=true")}
+    >
       {t("LocaleLayout.newEvent")}
     </Button>
   );
