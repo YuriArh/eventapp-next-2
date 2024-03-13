@@ -1,1 +1,1 @@
-export * from "./ModalLayout";
+export * from "./RightModalLayout";

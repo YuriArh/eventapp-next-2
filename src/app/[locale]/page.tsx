@@ -1,6 +1,5 @@
+import { AnimatePresence, LayoutGroup } from "framer-motion";
 import { unstable_setRequestLocale } from "next-intl/server";
-
-import { NewEventButton } from "~/features/NewEvent";
 import { MainTools } from "~/widgets/MainTools";
 import { CustomMap } from "~/widgets/Map";
 import { NewEventModal } from "~/widgets/NewEventModal";
@@ -12,13 +11,13 @@ type Props = {
 
 export default function Home({ params: { locale }, searchParams }: Props) {
   unstable_setRequestLocale(locale);
-  const modal = searchParams?.modal;
+
   return (
     <main>
-      <div className="relative ">
+      <div className="relative w-screen h-screen flex">
         <MainTools />
         <CustomMap />
-        {modal && <NewEventModal />}
+        <NewEventModal />
       </div>
     </main>
   );

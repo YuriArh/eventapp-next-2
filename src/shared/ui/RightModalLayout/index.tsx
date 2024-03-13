@@ -1,9 +1,9 @@
 "use client";
 import { MouseEventHandler, useCallback, useEffect, useRef } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
-export function ModalLayout({ children }: { children: React.ReactNode }) {
+export function RightModalLayout({ children }: { children: React.ReactNode }) {
   const overlay = useRef(null);
   const wrapper = useRef(null);
   const router = useRouter();
@@ -35,20 +35,14 @@ export function ModalLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
       ref={overlay}
-      className="fixed bottom-0  right-0 top-0 z-10  w-1/4 bg-content2 rounded-l-lg shadow-[-10px_0_50px_-15px_rgba(0,0,0,0.3)]"
+      className="z-10 flex flex-initial w-1/4 bg-content2 rounded-l-lg shadow-[-10px_0_50px_-15px_rgba(0,0,0,0.3)]"
       onClick={onClick}
+      initial={{ x: 300 }}
+      animate={{ x: 0 }}
+      exit={{ x: 300 }}
     >
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        ref={wrapper}
-        className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 "
-      >
-        {children}
-      </motion.div>
+      {children}
     </motion.div>
   );
 }
